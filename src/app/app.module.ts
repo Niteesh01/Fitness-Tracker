@@ -17,6 +17,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import {StopTrainingComponent} from './training/current-training/stop-training.component';
+import {A} from '@angular/cdk/keycodes';
+import {AuthService} from './auth/auth.service';
+import {TrainingService} from './training/current-training/training.service';
 
 
 
@@ -35,16 +38,16 @@ import {StopTrainingComponent} from './training/current-training/stop-training.c
     SidenavListComponent,
     StopTrainingComponent
   ],
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    AppRoutingModule,
-    FlexLayoutModule
-  ],
-  providers: [],
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        AppRoutingModule,
+        FlexLayoutModule
+    ],
+  providers: [AuthService, TrainingService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })
